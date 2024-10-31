@@ -143,30 +143,105 @@ const quotes = [
     "Sambou na vida, mas deixou a coreografia da morte para outro.",
     "Partiu antes que a paciência se esgotasse totalmente.",
     "Aqui descansa alguém que finalmente conseguiu se livrar das tarefas chatas do dia a dia.",
-
-    
-    
+    "Morreu de tanto esperar pelo briefing.",
+    "Morreu afogado em timesheets.",
+    "Morreu de cansaço depois do último deadline.",
+    "Morreu de tanto ouvir “refaz o layout.",
+    "Morreu por falta de beba água no meio da campanha.",
+    "Morreu esmagado pelo orçamento (Budget).",
+    "Morreu esperando o Target ideal.",
+    "Morreu no brainstorm eterno.",
+    "Morreu de overdose de branding.",
+    "Morreu no último case de sucesso.",
+    "Morreu de tédio em mais um meeting.",
+    "Morreu de rir do slogan.",
+    "Morreu esperando o pix cair.",
+    "Morreu aguardando o boleto ser pago.",
+    "Morreu de cansaço depois do job.",
+    "Morreu no treino eterno da academia.",
+    "Morreu fazendo check-in no timesheet.",
+    "Morreu de rir do briefing.",
+    "Morreu tentando entender o layout.",
+    "Morreu fazendo um último ajuste no Target.",
+    "Morreu de tanto ouvir “cadê o Branding?",
+    "Morreu esmagado pelo budget apertado.",
+    "Morreu esperando o case ser aprovado.",
+    "Morreu tentando criar o slogan perfeito.",
+    "Morreu no último meeting que nem precisava.",
+    "Morreu de tanto reescrever o briefing.",
+    "Morreu de fome, não tinha tempo nem pra almoçar.",
+    "Morreu tentando colocar o layout responsivo.",
+    "Morreu na busca pelo Target perfeito.",
+    "Morreu em um brainstorm que nunca acabava.",
+    "Morreu fazendo malabarismo com o budget.",
+    "Morreu escrevendo o 20º case de sucesso.",
+    "Morreu de exaustão depois do job.",
+    "Morreu tentando explicar o briefing.",
+    "Morreu esperando o cliente pagar o boleto.",
+    "Morreu esperando o slogan ser aprovado.",
+    "Morreu de tanto beber água pra não estressar.",
+    "Morreu na academia tentando “queimar o budget.",
+    "Morreu esperando o deadline que mudou 5 vezes.",
+    "Morreu sem entender o layout do cliente.",
+    "Morreu no looping do Target que nunca fechava.",
+    "Morreu no brainstorm sem ideia boa.",
+    "Morreu tentando cortar o budget pela metade.",
+    "Morreu no último retoque do case.",
+    "Morreu de tédio no meeting.",
+    "Morreu de overdose de briefing.",
+    "Morreu de desidratação por esquecer de beber água.",
+    "Morreu lutando com o layout quebrado.",
+    "Morreu na academia, mas não viu o pix.",
+    "Morreu de cansaço explicando o Target.",
+    "Morreu de rir do slogan sem sentido.",
+    "Morreu esperando o briefing revisado.",
+    "Morreu no treino de alterar o job mais uma vez.",
+    "Morreu tentando ajustar o layout no deadline.",
+    "Morreu no brainstorm tentando pensar “fora da caixa.",
+    "Morreu afogado no branding.",
+    "Morreu tentando explicar o budget pro cliente.",
+    "Morreu sem entender o briefing.",
+    "Morreu no job eterno que nunca acabava.",
+    "Morreu sem ver o Target.",
+    "Morreu de tanto reescrever o slogan.",
+    "Morreu esperando o layout ser aprovado.",
+    "Morreu sem nunca chegar ao brainstorm final.",
+    "Morreu sem ver o budget sair do papel.",
+    "Morreu fazendo check no timesheet do além.",
+    "Morreu esperando o pix do treino.",
+    "Morreu no último ajuste do case.",
+    "Morreu de sede porque ninguém lembrou do “beba água.",
+    "Morreu no Target inalcançável.",
+    "Morreu no brainstorm tentando ser criativo.",
+    "Morreu de rir do briefing.",
+    "Morreu esperando o meeting que nunca acontecia.",
+    "Morreu no slogan “diferente.",
+    "Morreu no orçamento cortado.",
+    "Morreu esperando o job final.",
+        
 ];
 
 function generateQuote() {
-    const quote = quotes[Math.floor(Math.random() * quotes.length)];
-    document.querySelector(".quote").innerHTML = `"${quote}"`;
+    const usernameInput = document.getElementById("username");
+    const username = usernameInput.value || "Alguém";
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    const personalizedQuote = `${username}, ${randomQuote.charAt(0).toUpperCase() + randomQuote.slice(1)}`;
+
+    document.getElementById("quote-text").innerHTML = `"${personalizedQuote}"`;
     document.querySelector(".quote").style.display = "block";
+
+    // Ocultar o campo de nome e alterar o botão para "Gerar nova frase"
+    usernameInput.style.display = "none";
+    const generateButton = document.getElementById("generate-button");
+    generateButton.innerHTML = "Gerar nova frase";
+    generateButton.onclick = resetQuote;
 }
 
-
-let likes = 0;
-
-function likeQuote() {
-    likes++;
-    document.querySelector(".likes").innerHTML = `${likes}`;
-    localStorage.setItem("likes", likes);
+function resetQuote() {
+    // Exibir o campo de nome e restaurar o botão original
+    document.getElementById("username").style.display = "block";
+    document.querySelector(".quote").style.display = "none";
+    document.getElementById("generate-button").innerHTML = "Descubra";
+    document.getElementById("username").value = ""; // Limpar o campo de entrada
+    document.getElementById("generate-button").onclick = generateQuote;
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    const savedLikes = localStorage.getItem("likes");
-    if (savedLikes) {
-        likes = savedLikes;
-        document.querySelector(".likes").innerHTML = `${likes}`;
-    }
-});

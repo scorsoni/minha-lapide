@@ -4,6 +4,7 @@
 	--app-color2: #FF8C00;
 	--app-color3: #000000;
     --app-color4: #ffffff;
+    --app-color5: #F2DC0D;
 	--app-font1: 'Griffy';
 
 }
@@ -47,9 +48,11 @@ h1 {
     font-size: 60px;
     font-weight: 900;
     line-height: 40px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    color: var(--app-color4);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--app-color2);
+    padding: 20px;
+    display: block;
 }
 
 main {
@@ -91,15 +94,70 @@ main {
     align-items: center;
     height: 100%;
 }
+.form-input {
+    width: 100%;
+    padding: .65rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    border: 0;
+    font-family: var(--app-font1);
+    color: var(--app-color3);
+    font-size: 1.5rem;
+}
 /*
 .quote {
-    background: url(../img/lapide.png);
-    width: 600px;
-    height: 600px;
+    background: url(../img/lapide.png) no-repeat;
     background-size: cover;
+    background-position: center;
     color: var(--app-color4);
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    min-height: 300px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#quote-text {
+    width: 80%;
+    max-width: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-align: center;
+    position: relative;
+    word-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+    .quote {
+        width: 100%;
+        min-height: 250px;
+        padding: 10px;
+    }
+    #quote-text {
+        font-size: 1rem;
+        width: 90%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .quote {
+        min-height: 200px;
+    }
+    #quote-text {
+        font-size: 0.9rem;
+    }
+}
+
 */
+
 .quote {
     max-width: 860px;
     margin: 0 auto;
@@ -119,18 +177,12 @@ main {
     display: none;
 }
 
-.likes {
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0;
-    padding: 0;
 
-}
 .button {
     text-decoration: none;
     text-align: center;
     font-family: var(--app-font1);
-    font-size: 22px;
+    font-size: 1.5rem;
     font-weight: 900;
     text-transform: uppercase;
     background-color: var(--app-color2);
@@ -144,6 +196,7 @@ main {
     cursor: pointer;
     border-bottom: 10px solid;
     position: relative;
+    margin-top: 1rem;
    
 }
 .button:hover ,
@@ -168,10 +221,12 @@ main {
     margin-bottom:40px;
 }
 @media (max-width: 600px) {
-    h1 {
-        font-size: 33px;
+    #video-bg {
+        height: auto;
+        width: 100vw;
+        height: 100vh;
     }
-    .quote {
-        font-size: 16px;
+    .container {
+        padding: 10px;
     }
 }
