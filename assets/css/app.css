@@ -6,7 +6,6 @@
     --app-color4: #ffffff;
 	--app-font1: 'Griffy';
 
-
 }
 
 body,
@@ -23,8 +22,8 @@ body {
 	letter-spacing: 0;
 	line-height: 1.5;
 	font-weight: 400;
-	color: var(--app-color3);
-	background-color: var(--app-color1);
+	color: var(--app-color4);
+	background-color: var(--app-color3);
 	position: relative;
     text-align: center;
 	-ms-word-wrap: break-word;
@@ -105,6 +104,7 @@ main {
     max-width: 860px;
     margin: 0 auto;
     background-color: var(--app-color4);
+    color: var(--app-color3);
     border: 4px solid var(--app-color3);
     border-radius: 30px;
     padding: 40px 40px;
@@ -165,7 +165,7 @@ main {
     margin: 0 auto;
     cursor: pointer;
     margin-top: 40px;
-    margin-bottom:;
+    margin-bottom:40px;
 }
 @media (max-width: 600px) {
     h1 {
